@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.util.ElementUtil;
 
+import io.qameta.allure.Step;
+
 public class LoginPage {
 
 	private WebDriver driver;
@@ -25,12 +27,14 @@ public class LoginPage {
 	}
 
 	// Page Actions
+	@Step("Getting login page title")
 	public String getLoginPageTitle() {
 		String title = eleutil.waitForTitleToBe(AppConstants.LOGIN_PAGE_TITLE, AppConstants.SMALL_DEFAULT_TIMEOUT);
 		System.out.println(title);
 		return title;
 	}
 
+	@Step("Getting login page URL")
 	public String getLoginUrl() {
 		String url = eleutil.waitForUrl(AppConstants.SMALL_DEFAULT_TIMEOUT, AppConstants.LOGIN_URL_FRACTION);
 		System.out.println(url);

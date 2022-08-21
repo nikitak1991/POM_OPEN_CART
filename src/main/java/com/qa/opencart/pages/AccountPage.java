@@ -17,7 +17,7 @@ public class AccountPage {
 
 	By footerheaderlist = By.cssSelector("div h5");
 	By footerlsit = By.xpath("//H5/../ul/li");
-	By logoutlink = By.linkText("Logout]");
+	By logoutlink = By.linkText("Logout");
 	By searchField = By.cssSelector("div#search input[name=\"search\"]");
 	By searchIcon = By.cssSelector("div#search button");
 
