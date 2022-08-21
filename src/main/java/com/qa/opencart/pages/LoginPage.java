@@ -47,6 +47,7 @@ public class LoginPage {
 
 	}
 
+	@Step("doing login with username :{0} and password :{1}")
 	public AccountPage doLogin(String username, String password) {
 		eleutil.doSendKeysWithWait(email, AppConstants.SMALL_DEFAULT_TIMEOUT, username);
 		eleutil.doSendKeys(this.password, password);
