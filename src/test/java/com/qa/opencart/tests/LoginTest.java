@@ -18,9 +18,10 @@ import io.qameta.allure.Story;
 @Story("Jira No---:Login feature with forgot password link")
 public class LoginTest extends BaseTest {
 
-	@Test
+	
 	@Description("Story no : this test is verifyting login page title")
 	@Severity(SeverityLevel.NORMAL)
+	@Test
 		public void loginPageTitleTest() {
 		String title = loginpage.getLoginPageTitle();
 		Assert.assertEquals(title, AppConstants.LOGIN_PAGE_TITLE);
