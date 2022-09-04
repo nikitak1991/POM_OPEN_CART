@@ -56,13 +56,22 @@ public class Driverfactory {
 				WebDriverManager.chromedriver().setup();
 				tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 			}
-		} else if (browsername.equalsIgnoreCase("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			tlDriver.set(new FirefoxDriver());
-		} else if (browsername.equalsIgnoreCase("safari")) {
+		} else
+			if (browsername.equalsIgnoreCase("firefox")) {
+			  if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+				// remote execution on grid:
+				init_remoteWebDriver("firefox");
+			} else {
+				// local execution:
+				WebDriverManager.firefoxdriver().setup();
+			  tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
+		}
+			}
+			else if (browsername.equalsIgnoreCase("safari")) {
 			WebDriverManager.safaridriver().setup();
 			tlDriver.set(new SafariDriver());
-		} else {
+		} 
+			else {
 			System.out.println("Please pass correct browser name");
 		}
 
